@@ -12,6 +12,7 @@ class MainAdapter(private val data: List<Hewan>) : RecyclerView.Adapter<MainAdap
             namaTextView.text = hewan.nama
             latinTextView.text = hewan.namaLatin
             imageView.setImageResource(hewan.imageResId)
+            jenisTextView.text = hewan.jenis
         }
     }
 
