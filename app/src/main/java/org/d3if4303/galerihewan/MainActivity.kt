@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             Hewan("Kalkun", "Meleagris gallopavo", R.drawable.kalkun,"Unggas"),
             Hewan("Kambing", "Capricornis sumatrensis", R.drawable.kambing,"Mamalia"),
             Hewan("Kelinci", "Oryctolagus cuniculus", R.drawable.kelinci,"Mamalia"),
-            Hewan("Kera", "Bubalus bubalis", R.drawable.kerbau,"Mamalia"),
+            Hewan("Kerbau", "Bubalus bubalis", R.drawable.kerbau,"Mamalia"),
             Hewan("Kuda", "Equus caballus", R.drawable.kuda,"Mamalia"),
             Hewan("Sapi", "Bos taurus", R.drawable.sapi,"Mamalia")
         )
