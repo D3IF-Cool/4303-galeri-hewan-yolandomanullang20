@@ -6,14 +6,14 @@ import androidx.recyclerview.widget.RecyclerView
 import org.d3if4038.galerihewan.databinding.ListItemBinding
 import org.d3if4038.galerihewan.model.Hewan
 
-class MainAdapter(private val data: List<Hewan>) : RecyclerView.Adapter<MainAdapter.ViewHolder>(){
-    class ViewHolder(private val binding: ListItemBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        fun bind(hewan: Hewan) = with(binding) {
-            namaTextView.text = hewan.nama
-            latinTextView.text = hewan.namaLatin
-            imageView.setImageResource(hewan.imageResId)
-        }
+class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+
+    private val data = mutableListOf<Hewan>()
+
+    fun updateData(newData: List<Hewan>) {
+        data.clear()
+        data.addAll(newData)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -21,12 +21,18 @@ class MainAdapter(private val data: List<Hewan>) : RecyclerView.Adapter<MainAdap
         val binding = ListItemBinding.inflate(inflater, parent, false)
         return ViewHolder(binding)
     }
-
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(data[position])
+    }
     override fun getItemCount(): Int {
         return data.size
     }
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(data[position])
+    class ViewHolder(
+        private val binding: ListItemBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(hewan: Hewan) = with(binding) {
+            namaTextView.text = hewan.nama
+            latinTextView.text = hewan.namaLatin
+            imageView.setImageResource(hewan.imageResId)}
     }
 }
