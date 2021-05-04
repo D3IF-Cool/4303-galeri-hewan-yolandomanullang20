@@ -1,4 +1,4 @@
-package org.d3if4303.galerihewan
+package org.d3if4038.galerihewan
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -12,7 +12,6 @@ class MainAdapter(private val data: List<Hewan>) : RecyclerView.Adapter<MainAdap
             namaTextView.text = hewan.nama
             latinTextView.text = hewan.namaLatin
             imageView.setImageResource(hewan.imageResId)
-            jenisTextView.text = hewan.jenis
         }
     }
 
